@@ -19,9 +19,15 @@
             <nav class="navigation">
                 <a class="logo-header" href="./index.html" lang="en">Web<span class="studio-above">Studio</span></a>
                 <ul class="nav-links">
-                    <li class="nav-links-item"><a class="nav-link" href="./index.html"><span class="this-page">Студия</span></a></li>
-                    <li class="nav-links-item"><a class="nav-link" href="./portfolio.html">Портфолио</a></li>
-                    <li class="nav-links-item"><a class="nav-link" href="#">Контакты</a></li>
+                    <li class="nav-links-item">
+                        <a class="nav-link active-page" href="./index.html"><span class="this-page">Студия</span></a>
+                    </li>
+                    <li class="nav-links-item">
+                        <a class="nav-link" href="./portfolio.html">Портфолио</a>
+                    </li>
+                    <li class="nav-links-item">
+                        <a class="nav-link" href="#">Контакты</a>
+                    </li>
                 </ul>
             </nav>
             <ul class="header-address">
@@ -51,18 +57,20 @@
             <div class="container">
                 <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
                 <button type="button" class="order-button" data-modal-open>Заказать услугу</button>
-                <div class="backdrop is-hidden" data-modal>
-                    <div class="modal">
-                        <div class="close" data-modal-close>
-                            <svg class="close-sign">
-                                <use href="./index-images/icons/vector.svg">
-                                </use>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
+
+        <!-- modal window -->
+        <div class="backdrop is-hidden" data-modal>
+            <div class="modal">
+                <button class="close" data-modal-close>
+                    <svg class="close-sign">
+                        <use href="./index-images/icons/vector.svg">
+                        </use>
+                    </svg>
+                </button>
+            </div>
+        </div>
 
         <!-- usp -->
         <section class="usp">

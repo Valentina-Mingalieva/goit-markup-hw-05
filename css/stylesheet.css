@@ -114,10 +114,6 @@ img {
   transition: color var(--time) var(--delay);
 }
 
-.nav-link > .this-page {
-  color: var(--accent-color);
-}
-
 .nav-link:hover,
 .nav-link:focus,
 .nav-contact-link:hover,
@@ -125,7 +121,11 @@ img {
   color: var(--accent-color);
 }
 
-.active-page::after {
+.nav-link > .this-page {
+  color: var(--accent-color);
+}
+
+.nav-link::after {
   content: "";
   display: block;
   height: 4px;
@@ -135,6 +135,13 @@ img {
   position: absolute;
   left: 0;
   bottom: 0;
+  visibility: hidden;
+  transition: visibility var(--time) var(--delay);
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  visibility: visible;
 }
 
 .header-address-item {
@@ -171,10 +178,6 @@ img {
   color: var(--accent-color);
 }
 
-address {
-  font-style: normal;
-}
-
 .header-address {
   margin-left: auto;
   display: flex;
@@ -182,6 +185,10 @@ address {
 }
 
 /* footer */
+
+address {
+  font-style: normal;
+}
 
 .footer {
   background: #2f303a;
@@ -321,7 +328,8 @@ address {
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity var(--time) var(--delay);
+  visibility: visible;
+  transition: visibility var(--time) var(--delay), var(--time) var(--delay);
 }
 
 .backdrop.is-hidden {
@@ -331,16 +339,16 @@ address {
 }
 
 .modal {
-  height: 581px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 581px;
   min-width: 528px;
   background: var(--white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   opacity: 1;
   transition: opacity var(--time) var(--delay);
 }
@@ -359,6 +367,10 @@ address {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+}
+
+.close:active {
+  outline: none;
 }
 
 .close-sign {
@@ -470,16 +482,17 @@ address {
 }
 
 .job-text {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   left: 0;
   bottom: 0;
-  padding: 27px;
   position: absolute;
+  height: 70px;
   width: 100%;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  text-align: center;
   text-transform: uppercase;
   color: var(--white-color);
   background: rgba(47, 48, 58, 0.8);
@@ -757,7 +770,7 @@ address {
   background: var(--accent-color);
   opacity: 0.9;
   color: var(--white-color);
-  transform: translateY(100%);
+  transform: translateY(101%);
   transition: transform var(--time) var(--delay);
 }
 
